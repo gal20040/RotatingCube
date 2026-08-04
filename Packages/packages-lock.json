@@ -174,17 +174,8 @@
       "source": "builtin",
       "dependencies": {}
     },
-    "com.unity.ide.rider": {
-      "version": "3.0.40",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ext.nunit": "1.0.6"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.26",
+      "version": "2.0.27",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -328,6 +319,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "io.sentry.unity": {
+      "version": "https://github.com/getsentry/unity.git#4.8.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "668b590f6e3cb42e45e14afa803304c64bb6f637"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
