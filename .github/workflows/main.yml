@@ -170,7 +170,7 @@ jobs:
       - name: 🦺 Build Android ${{ matrix.exportMode }}
         timeout-minutes: 90
         id: buildStep
-        uses: game-ci/unity-builder@v5.0.1
+        uses: game-ci/unity-builder@v6.0.0
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL_PERSONAL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD_PERSONAL }}
