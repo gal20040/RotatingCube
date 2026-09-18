@@ -137,13 +137,13 @@ jobs:
 
       - name: Checkout Repository
         timeout-minutes: 2
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v7.0.1
         with:
           fetch-depth: 0
 
       - name: Cache Library
         timeout-minutes: 3
-        uses: actions/cache@v6.1.0
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v6.1.0
         with:
           path: Library
           key: Library-Android-${{ hashFiles('Packages/manifest.json', 'Packages/packages-lock.json', 'ProjectSettings/ProjectSettings.asset', 'ProjectSettings/ProjectVersion.txt', 'Assets/Settings/Build Profiles/Android_Release_APK.asset', 'Assets/Settings/Build Profiles/Android_Release_AAB.asset') }}-${{ matrix.exportMode == 'apk' && 'apk' || 'aab' }}${{ inputs.use_cached_library == true && '' || '-new' }}
@@ -170,7 +170,7 @@ jobs:
       - name: 🦺 Build Android ${{ matrix.exportMode }}
         timeout-minutes: 90
         id: buildStep
-        uses: game-ci/unity-builder@v5.0.1
+        uses: game-ci/unity-builder@d2f1bfe20a837ce4ed1e38e20c5fc0eb6fb1c5d6 # v5.0.1
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL_PERSONAL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD_PERSONAL }}
@@ -202,7 +202,7 @@ jobs:
 
       - name: Upload Build as GitHub artifact
         timeout-minutes: 10
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@ea165f8d65b6db9b8250c04a3b57d0754eb09991 # v7.0.1
         if: steps.buildStep.outcome != 'skipped'
         with:
           path: build/Android
